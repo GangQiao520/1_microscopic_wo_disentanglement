@@ -14,11 +14,9 @@
 [4] If your computer does not support more than 12 cores for concurrency, you may change the parameter 'workers' to be a smaller value in the paired training script and testing script:
 
 In training script, change the parameter 'workers' to be a smaller value:
-
 model.fit_generator(training_batch_gen, steps_per_epoch=num_training_instances, epochs=max_num_epoch, validation_data=validation_batch_gen, validation_steps=num_testing_instances, max_queue_size=12,  workers=12, use_multiprocessing=True, shuffle=False, initial_epoch=0) 
 
 In the corresponding testing script, change the parameter 'workers' to be a smaller value:
-
 model.predict_generator(testing_batch_gen, steps=num_seq, max_queue_size=12, workers=12, use_multiprocessing=True, verbose=0)
 
 [5] For illustration of the data, I just uploaded microscopic_image_samples_all_steps_binary/instance1 and microscopic_labels_dsr_10_binary/instance1
